@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Club Code Challenges</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="interactive-canvas"></canvas>
+    <div id="app">
+        <h1>Hack Club Code Challenges Generator</h1>
+        <div class="controls">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <label for="language">Select Language:</label>
+            <select id="language">
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="HTML">HTML</option>
+                <option value="C#">C#</option>
+                <option value="C">C</option>
+            </select>
+
+            <button id="generate">Generate Challenge</button>
+        </div>
+        <div id="challenge-display">
+            <h2>Challenge:</h2>
+            <p id="challenge-text">Click "Generate Challenge" to see a challenge!</p>
+        </div>
+    </div>
+
+    <!-- Modal for showing challenge -->
+    <div id="challenge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Challenge:</h2>
+            <p id="challenge-text-modal">Click "Generate Challenge" to see a challenge!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #1E2A47, #243B55); /* Modern radial gradient */
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Particle Background */
+#interactive-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensures particles stay behind the app */
+    background: transparent; /* Clear background for canvas */
+}
+
+/* Main App Container */
+#app {
+    text-align: center;
+    background: rgba(44, 58, 89, 0.95); /* Semi-transparent dark blue for depth */
+    padding: 30px;
+    border-radius: 20px; /* Softer, modern rounded corners */
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Deep shadow for floating effect */
+    z-index: 1;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#app:hover {
+    transform: scale(1.05); /* Smooth scaling */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Enhanced hover shadow */
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #6FB9F2; /* Softer blue for contrast */
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px; /* Adds elegance */
+}
+
+select, button {
+    background: linear-gradient(135deg, #4F8BC8, #3D72A1);
+    color: #000000; /* Text more readable on dark buttons */
+    border: none;
+    border-radius: 12px; /* Smooth buttons */
+    padding: 12px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+select:hover, button:hover {
+    background: linear-gradient(135deg, #3D72A1, #6FB9F2); /* Subtle hover gradient */
+    transform: translateY(-2px); /* Small lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow for hover */
+}
+
+select:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #6FB9F2; /* Focus glow effect */
+}
+
+#challenge-display {
+    margin-top: 20px;
+    color: #6FB9F2;
+    font-size: 22px; /* Slightly larger for emphasis */
+    font-weight: 600;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay for focus */
+    backdrop-filter: blur(5px); /* Subtle blur effect for elegance */
+    overflow: hidden;
+}
+
+/* Modal Content */
+.modal-content {
+    background: rgba(44, 58, 89, 0.95); /* Matches app container for consistency */
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 15%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease-out;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    background: #3D72A1;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #6FB9F2;
+    transform: rotate(90deg); /* Fun hover effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
